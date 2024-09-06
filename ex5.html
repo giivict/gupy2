@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inverter String</h1>
+
+    <input type="text" id="inverteString" placeholder="Digite uma string">
+    <button onclick="inverterString()">Inverter</button>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function inverterString() {
+            let str = document.getElementById("inverteString").value;
+            
+            let stringInvertida = "";
+            
+            for (let i = str.length - 1; i >= 0; i--) {
+                stringInvertida += str[i]; 
+            }
+            
+            document.getElementById("resultado").innerHTML = `String invertida: ${stringInvertida}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentual de Faturamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Percentual de Faturamento por Estado</h1>
+
+    <button onclick="calcularPercentuais()">Calcular Percentuais</button>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function calcularPercentuais() {
+           
+            const faturamentoSP = 67836.43;
+            const faturamentoRJ = 36678.66;
+            const faturamentoMG = 29229.88;
+            const faturamentoES = 27165.48;
+            const faturamentoOutros = 19849.53;
+
+            
+            const faturamentoTotal = faturamentoSP + faturamentoRJ + faturamentoMG + faturamentoES + faturamentoOutros;
+
+            
+            const percentualSP = (faturamentoSP / faturamentoTotal) * 100;
+            const percentualRJ = (faturamentoRJ / faturamentoTotal) * 100;
+            const percentualMG = (faturamentoMG / faturamentoTotal) * 100;
+            const percentualES = (faturamentoES / faturamentoTotal) * 100;
+            const percentualOutros = (faturamentoOutros / faturamentoTotal) * 100;
+
+            
+            const resultado = `
+                <p>SP: ${percentualSP.toFixed(2)}%</p>
+                <p>RJ: ${percentualRJ.toFixed(2)}%</p>
+                <p>MG: ${percentualMG.toFixed(2)}%</p>
+                <p>ES: ${percentualES.toFixed(2)}%</p>
+                <p>Outros: ${percentualOutros.toFixed(2)}%</p>
+            `;
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
